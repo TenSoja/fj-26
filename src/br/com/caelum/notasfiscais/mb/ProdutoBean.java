@@ -25,6 +25,11 @@ public class ProdutoBean {
 		this.produtos = dao.listaTodos();
 		
 	}
+	public void remove(){
+		ProdutoDao dao = new ProdutoDao();
+		dao.remove(produto);
+		this.produtos = dao.listaTodos();
+	}
 	public List<Produto> getProdutos(){
 		if(produtos == null){
 			System.out.println("Carregando produtos...");
@@ -34,4 +39,5 @@ public class ProdutoBean {
 		return produtos;
 		
 	}
+
 }
