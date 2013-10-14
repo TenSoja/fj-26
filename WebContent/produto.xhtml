@@ -20,10 +20,10 @@
 			<h:inputText id="preco" value="#{produtoBean.produto.preco}" />
 			
 			<h:commandButton value="Gravar" action="#{produtoBean.grava}" />
-			
-			<br />
-			
-			<h:dataTable value="#{produtoBean.produtos}" var="produto">
+		</h:panelGrid>	
+	</h:form>
+	<h:form>
+		<h:dataTable value="#{produtoBean.produtos}" var="produto">
 			
 			<h:column>
 				<f:facet name="header">Nome</f:facet>
@@ -40,11 +40,13 @@
 				#{produto.preco}
 			</h:column>
 			
-			
-			
-			</h:dataTable>
-			
-		</h:panelGrid>
+			<h:column>
+				<f:facet name="header">Ações</f:facet>
+				<h:commandLink action="#{produtoBean.remove(produto)}" value="Remover" />
+			</h:column>
+		</h:dataTable>
+	
+	
 	</h:form>
 </h:body>
 </html>
