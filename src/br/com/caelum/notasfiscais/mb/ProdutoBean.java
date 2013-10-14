@@ -43,6 +43,14 @@ public class ProdutoBean {
 		return produtos;
 		
 	}
+	public double getTotal(){
+		double total = 0.0;
+		for (Produto p : produtos) {
+			total += p.getPreco();
+		}
+		return total;
+	}
+	
 	public void setProduto(Produto produto){
 		this.produto = produto;
 	}
